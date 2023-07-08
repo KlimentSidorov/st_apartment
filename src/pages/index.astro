@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Intro from '../components/Intro.astro';
+import Banner from "../components/Banner.astro"
+import Gallery from '../components/Gallery';
+import Contact from '../components/Contact.astro';
+import Highlights from '../components/Highlights.astro';
+---
+
+<Layout title="S&T apartments">
+ <Intro/>
+ <Banner />
+ <Gallery client:load/>
+ <Highlights/>
+ <Contact/>
+</Layout>
+
+
