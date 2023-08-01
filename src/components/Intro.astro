@@ -1,28 +1,29 @@
 ---
-import imageHome from "../../public/nature-kocka.png"
+import imageHome from "../../public/homeImage.webp"
 import Macedonia from "../../public/flag-for-macedonia-svgrepo-com.svg"
 import UK from "../../public/united-kingdom-uk-svgrepo-com.svg"
+const { title,subTitle,btnGallery,btnContact,language } = Astro.props;
 ---
 
 <div class=" container mx-auto px-4 lg:h-[100vh] pb-10 lg:pb-20 ">
      <div class="flex justify-end items-center py-5 lg:py-10">
-         <a href="/" class="block mr-2">
+         <a href="/mk" class={`block mr-2 ${language == "Mk" ? "border-2 border-blue-500 rounded-full p-1" : ""} `}>
            <img src={Macedonia} alt="Macedonia">
 </a>
-        <a href="/" class=" border-2 border-blue-500 rounded-full p-1 "><img src={UK} alt="United Kingdom"></a>
+        <a href="/" class={`${language == "En" ? "border-2 border-blue-500 rounded-full p-1" : ""} ` }><img src={UK} alt="United Kingdom"></a>
      </div>
      <div class="lg:flex lg:items-center">
  <div class=" lg:basis-1/2 text-center flex flex-col justify-center items-center mb-5 lg:mb-0 ">
-   <span class="block text-5xl  md:text-8xl xl:text-9xl text-blue-500 mb-5 uppercase">WELCOME!</span>
-   <h1 class="text-xl 2xl:text-4xl mb-5 md:mb-7 tracking-[0.5rem] uppercase">Stefea APARTMENT OHRID</h1>
+   <span class="block text-5xl  md:text-8xl xl:text-9xl text-blue-500 mb-5 uppercase">{title}</span>
+   <h1 class="text-xl 2xl:text-4xl mb-5 md:mb-7 tracking-[0.5rem] uppercase">{subTitle}</h1>
    <div class="sm:flex sm:items-center w-full sm:w-auto">
-    <a href="#contact" class="block w-full sm:w-auto px-8 py-3 rounded-full bg-blue-500 border-2 border-blue-500 text-white text-xl mr-5 hover:bg-white hover:text-blue-500 mb-5 sm:mb-0 transition-colors uppercase smooth-scroll">Contact us</a>
-    <a href="#gallery" class="block w-full sm:w-auto px-8 py-3 rounded-full bg-white text-blue-500 border-2 border-blue-500 text-xl hover:bg-blue-500 hover:text-white transition-colors uppercase smooth-scroll">Gallery</a>
+    <a href="#contact" class="block w-full sm:w-auto px-8 py-3 rounded-full bg-blue-500 border-2 border-blue-500 text-white text-xl mr-5 hover:bg-white hover:text-blue-500 mb-5 sm:mb-0 transition-colors uppercase smooth-scroll">{btnContact}</a>
+    <a href="#gallery" class="block w-full sm:w-auto px-8 py-3 rounded-full bg-white text-blue-500 border-2 border-blue-500 text-xl hover:bg-blue-500 hover:text-white transition-colors uppercase smooth-scroll">{btnGallery}</a>
    </div>
  </div>
  <div class="lg:basis-1/2 lg:ml-5">
   <div class=" rounded-full overflow-hidden mx-auto">
-   <img src={imageHome} alt="Apartment-img" class="w-full ">
+   <img src={imageHome} alt="Apartment-img" class="w-full object-cover ">
    </div>
  </div>
  </div>

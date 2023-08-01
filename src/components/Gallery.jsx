@@ -1,21 +1,48 @@
 import React, { useState } from "react";
 
+
+
 const image1 =
-  "https://images.unsplash.com/photo-1497752531616-c3afd9760a11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80";
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/472650504.jpg?k=c20eeed3fd46cd566cafe88dd897e9d62df343edd403b3bd8ad77f099452e0ad&o=&hp=1";
 const image2 =
-  "https://images.unsplash.com/photo-1470093851219-69951fcbb533?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80";
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/472650508.jpg?k=f76278d0ebbac46333e91c4ed0b2881db1f78b90446b37ea50179e795c6decf2&o=&hp=1";
 const image3 =
-  "https://images.unsplash.com/photo-1447684808650-354ae64db5b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80";
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/472650502.jpg?k=9c665133fbd71e758722703c894bc26fbc1d4dec5d33378f6edcf007b943c464&o=&hp=1";
 const image4 =
-  "https://images.unsplash.com/photo-1425082661705-1834bfd09dca?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2110&q=80";
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/472650468.jpg?k=5fd1d920cf5de383cdb5b2919fc922929b9ed3ac3fc082e6c972e6395faea1ea&o=&hp=1";
 const image5 =
-  "https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2301&q=80";
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/472650511.jpg?k=87ce80760e11d339a81fcefeaa44ddc21390fe58de8f0f39d4c3064318b60257&o=&hp=1";
 const image6 =
-  "https://images.unsplash.com/photo-1500694216671-a4e54fc4b513?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2092&q=80";
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/472650514.jpg?k=47884fde7ed84c08402b41962a080f70c752e2c8fee9f2f57ba0e2733101f205&o=&hp=1";
+const image7 =
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/472650516.jpg?k=5febe5420d35bb3dce2be645389e371ce2e62cb007e261ced2761de7a5cfcc10&o=&hp=1";
+const image8 =
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/473894230.jpg?k=4f380d378afb1cba6a8f1969bf923747abf26351dee4ec33852fb71b988b4d07&o=&hp=1";
+const image9 =
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/473894227.jpg?k=ba2446cb907ca28b0205f23b0fbddfa17f2bb8b70183baf7a92afe5d9139ba9d&o=&hp=1";
+const image10 =
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/473894225.jpg?k=bfce5559da7ec5b843be7e42cd5d8b5e14da6f8ca691dc11b9f89f4822fa3dca&o=&hp=1";
+const image11 =
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/473894224.jpg?k=2f207fc71c6dedd7e929fc7e8c18ad8c67fb1e7757857728200425f083348060&o=&hp=1";
+const image12 =
+  "https://cf.bstatic.com/xdata/images/hotel/max1024x768/477994451.jpg?k=dddce66f3f07945a8bdaa8cbd1db07d9296a5cce13b40045fb03975e8953eedc&o=&hp=1";
 
-const images = [image1, image2, image3, image4, image5, image6];
+const images = [
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
+  image7,
+  image8,
+  image9,
+  image10,
+  image11,
+  image12,
+];
 
-export default function Gallery() {
+export default function Gallery({ title }) {
   const [imageToShow, setImageToShow] = useState("");
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
 
@@ -66,7 +93,7 @@ export default function Gallery() {
       <div className='container mx-auto px-4  py-10 lg:py-20' id='gallery'>
         <h2 className=' text-center text-4xl 2xl:text-6xl text-blue-500 mb-10 uppercase'>
           {" "}
-          Gallery
+          {title}
         </h2>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
           {imageCards}{" "}
@@ -99,7 +126,7 @@ export default function Gallery() {
           <div className='relative w-full h-full'>
             <img
               id='lightbox-img'
-              className='max-h-80vh w-full h-full  max-w-90vw object-contain md:object-cover rounded-xl'
+              className='w-full h-full   object-contain  rounded-xl'
               src={imageToShow}
               alt='Lightbox'
             />

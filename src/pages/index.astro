@@ -1,19 +1,89 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Intro from '../components/Intro.astro';
-import Banner from "../components/Banner.astro"
-import Gallery from '../components/Gallery';
-import Contact from '../components/Contact.astro';
-import Highlights from '../components/Highlights.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Intro from "../components/Intro.astro";
+import Banner from "../components/Banner.astro";
+import Gallery from "../components/Gallery";
+import Contact from "../components/Contact.astro";
+import Highlights from "../components/Highlights";
+
+const parking = {
+  title: "Parking",
+  text: "Free public parking is possible on site (reservation is not needed).",
+};
+
+const internet = {
+  title: "Internet",
+  text: "WiFi is available in all areas and is free of charge.",
+};
+
+const pets = {
+  title: "Pets",
+  text: "Pets are allowed on request. Charges may be applicable.",
+};
+
+const kitchen = {
+  title: "Kitchen",
+  data: [
+    "Dining table",
+    "Oven",
+    "Kitchenware",
+    "Electric kettle",
+    "Washing machine",
+    "Refrigerator",
+  ],
+};
+
+const amenities = {
+  title: "Room Amenities",
+  data: [
+    "Sofa bed",
+    "Drying rack for clothing",
+    "Clothes rack",
+    "Hardwood or parquet floors",
+    "Soundproofing",
+    "Ironing facilities",
+    "Iron",
+  ],
+};
+
+const bathroom = {
+  title: "Bathroom",
+  data: [
+    "Toilet paper",
+    "Towels",
+    "Slippers",
+    "Shower",
+    "Toilet",
+    "Hairdryer",
+    "Bath",
+  ],
+};
 ---
 
-<Layout title="S&T apartments">
- <Intro/>
- <Banner />
- <Gallery client:load/>
- <Highlights/>
- <Contact/>
+<Layout title='S&T apartments'>
+  <Intro
+    title='WELCOME!'
+    subTitle='STEFEA APARTMENT OHRID'
+    btnContact='Contact us'
+    btnGallery='Gallery'
+    language='En'
+  />
+  <Banner
+    title='Your Dream Vacation'
+    subTitle='STEFEA'
+    text='At Stefea Apartment, we know you’re looking for the perfect vacation rental. Our beautiful, fully furnished apartment is designed to cater to your every need, making your stay as comfortable and enjoyable as possible.'
+  />
+  <Gallery client:load title={"Gallery"} />
+  <Highlights
+    client:load
+    title='APARTMENT HIGHLIGHTS'
+    parking={parking}
+    internet={internet}
+    pets={pets}
+    kitchen={kitchen}
+    amenities={amenities}
+    bathroom={bathroom}
+  />
+  <Contact />
 </Layout>
-
-

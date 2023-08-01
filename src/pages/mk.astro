@@ -1,0 +1,79 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Intro from "../components/Intro.astro";
+import Banner from "../components/Banner.astro";
+import Gallery from "../components/Gallery";
+import Contact from "../components/Contact.astro";
+import Highlights from "../components/Highlights";
+
+const parking = {
+  title: "Паркинг",
+  text: "Бесплатен јавен паркинг е можен на лице место (резервација не е потребна)",
+};
+
+const internet = {
+  title: "Интернет",
+  text: "WiFi е достапна во сите области и е бесплатна.",
+};
+
+const pets = {
+  title: "Домашни миленици",
+  text: "Домашни миленици се дозволени на барање. Може да се применуваат трошоци.",
+};
+
+const kitchen = {
+  title: "Кујна",
+  data: [
+    "Трпезариска маса",
+    "Печка",
+    "Кујнски прибор",
+    "Електричен котел",
+    "Машина за перење",
+    "Фрижидер",
+  ],
+};
+
+const amenities = {
+  title: "Удобности во собите",
+  data: [
+    "Кауч",
+    "Регал за сушење облека",
+    "Полица за облека",
+    "Тврдо дрво или паркет подови",
+    "Звучна изолација",
+    "Се за Пеглање",
+  ],
+};
+
+const bathroom = {
+  title: "Бања",
+  data: ["Тоалетна хартија", "Крпи", "Папучи", "Туш", "Тоалет", "Фен"],
+};
+---
+
+<Layout title='S&T apartments'>
+  <Intro
+    title='ДОБРЕ ДОЈДОВТЕ!'
+    subTitle='СТЕФЕА АПАРТМАН ОХРИД'
+    btnContact='Контактирајте не'
+    btnGallery='Галерија'
+    language='Mk'
+  />
+  <Banner
+    title='Вашиот одмор од соништата'
+    subTitle='СТЕФЕА'
+    text='Во Стефеа Aпартман, знаеме дека барате совршено сместување за одмор. Нашиот прекрасен, целосно опремен стан е дизајниран да ги задоволи сите ваши потреби, правејќи го вашиот престој што е можно поудобен и пријатен.'
+  />
+  <Gallery client:load title={"Галерија"} />
+  <Highlights
+    title='АПАРТМАНОТ ИМА'
+    parking={parking}
+    internet={internet}
+    pets={pets}
+    kitchen={kitchen}
+    amenities={amenities}
+    bathroom={bathroom}
+  />
+  <Contact />
+</Layout>
